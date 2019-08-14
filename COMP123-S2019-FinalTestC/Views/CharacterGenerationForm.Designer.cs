@@ -77,6 +77,10 @@
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.MainTabControl = new System.Windows.Forms.TabControl();
             this.label6 = new System.Windows.Forms.Label();
+            this.AnimalDataLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ArtDataLabel = new System.Windows.Forms.Label();
             this.CharacterSheetPage.SuspendLayout();
             this.CharecterMenuStrip.SuspendLayout();
             this.CharecterToolStrip.SuspendLayout();
@@ -241,7 +245,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label6, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 52);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
@@ -258,6 +262,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 50);
@@ -283,10 +288,14 @@
             this.SkillsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.SkillsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.SkillsTableLayoutPanel.Controls.Add(this.GenerateSkillsButton, 2, 3);
-            this.SkillsTableLayoutPanel.Controls.Add(this.AnimalLabel, 0, 0);
             this.SkillsTableLayoutPanel.Controls.Add(this.ArtLabel, 1, 0);
             this.SkillsTableLayoutPanel.Controls.Add(this.DriveLabel, 2, 0);
             this.SkillsTableLayoutPanel.Controls.Add(this.LanguageLabel, 3, 0);
+            this.SkillsTableLayoutPanel.Controls.Add(this.AnimalLabel, 0, 0);
+            this.SkillsTableLayoutPanel.Controls.Add(this.label1, 3, 1);
+            this.SkillsTableLayoutPanel.Controls.Add(this.AnimalDataLabel, 0, 1);
+            this.SkillsTableLayoutPanel.Controls.Add(this.ArtDataLabel, 1, 1);
+            this.SkillsTableLayoutPanel.Controls.Add(this.label2, 2, 1);
             this.SkillsTableLayoutPanel.Location = new System.Drawing.Point(9, 4);
             this.SkillsTableLayoutPanel.Name = "SkillsTableLayoutPanel";
             this.SkillsTableLayoutPanel.RowCount = 4;
@@ -709,11 +718,56 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(123, 0);
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Location = new System.Drawing.Point(3, 50);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 50);
             this.label6.TabIndex = 1;
             this.label6.Text = "Ability";
+            // 
+            // AnimalDataLabel
+            // 
+            this.AnimalDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AnimalDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AnimalDataLabel.Location = new System.Drawing.Point(3, 69);
+            this.AnimalDataLabel.Name = "AnimalDataLabel";
+            this.AnimalDataLabel.Size = new System.Drawing.Size(113, 69);
+            this.AnimalDataLabel.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(360, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 69);
+            this.label1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Location = new System.Drawing.Point(241, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 69);
+            this.label2.TabIndex = 0;
+            // 
+            // ArtDataLabel
+            // 
+            this.ArtDataLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ArtDataLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ArtDataLabel.Location = new System.Drawing.Point(122, 69);
+            this.ArtDataLabel.Name = "ArtDataLabel";
+            this.ArtDataLabel.Size = new System.Drawing.Size(113, 69);
+            this.ArtDataLabel.TabIndex = 0;
             // 
             // CharacterGenerationForm
             // 
@@ -796,5 +850,9 @@
         private System.Windows.Forms.Label FirstNameDataLabel;
         private System.Windows.Forms.Label LastNameDataLabel;
         private System.Windows.Forms.TabControl MainTabControl;
+        private System.Windows.Forms.Label AnimalDataLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ArtDataLabel;
+        private System.Windows.Forms.Label label2;
     }
 }

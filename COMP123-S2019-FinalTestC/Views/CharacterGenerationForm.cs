@@ -174,6 +174,7 @@ namespace COMP123_S2019_FinalTestC.Views
         private void GenerateSkillsButton_Click(object sender, EventArgs e)
         {
             AnimalDataLabel.Text = GenerateAnimal();
+            ArtDataLabel.Text = GenerateArt();
         }
         /// <summary>
         /// this is the method for skills on animal
@@ -184,6 +185,13 @@ namespace COMP123_S2019_FinalTestC.Views
             string[] animals = File.ReadAllLines("skills.txt");
             string animal = animals[random.Next(animals.Length)];
             return animals.ToString();
+        }
+
+        public string GenerateArt()
+        {
+            string[] art = File.ReadAllLines("skills.txt");
+            string art = art[random.Next(art.Length)];
+            return art.ToString();
         }
         /// <summary>
         /// This is the event handler for the NextButton Click event
