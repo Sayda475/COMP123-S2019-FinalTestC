@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace COMP123_S2019_FinalTestC.Views
 {
-    partial class AboutForm : Form
+    partial class AboutBox : Form
     {
-        public AboutForm()
+        public AboutBox()
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);

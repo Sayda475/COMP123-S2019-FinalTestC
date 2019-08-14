@@ -17,6 +17,8 @@ namespace COMP123_S2019_FinalTestC.Views
 {
     public partial class CharacterGenerationForm : MasterForm
     {
+        static Random random = new Random();
+        public string generateFirstName;
         public CharacterGenerationForm()
         {
             InitializeComponent();
@@ -32,19 +34,6 @@ namespace COMP123_S2019_FinalTestC.Views
             if (MainTabControl.SelectedIndex != 0)
             {
                 MainTabControl.SelectedIndex--;
-            }
-        }
-        /// <summary>
-        /// This is the event handler for the NextButton Click event
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        private void NextButton_Click_1(object sender, EventArgs e)
-        {
-            if (MainTabControl.SelectedIndex < MainTabControl.TabPages.Count - 1)
-            {
-                MainTabControl.SelectedIndex++;
             }
         }
         /// <summary>
@@ -93,13 +82,6 @@ namespace COMP123_S2019_FinalTestC.Views
                     using (StreamReader inputStream = new StreamReader(
                         File.Open(CharacterSheetOpenFileDialog.FileName, FileMode.Open)))
                     {
-                        //Read stuff from the file into the Product object
-                        //Program.product.productID = short.Parse(inputStream.ReadLine());
-                        //Program.product.condition = inputStream.ReadLine();
-                        //Program.product.cost = decimal.Parse(inputStream.ReadLine());
-                        //Program.product.platform = inputStream.ReadLine();
-                        //Program.product.OS = inputStream.ReadLine();
-
 
                         //Cleanup
                         inputStream.Close();
@@ -112,7 +94,6 @@ namespace COMP123_S2019_FinalTestC.Views
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            //PopulateProductInfo();
         }
         /// <summary>
         /// This is the shared event handler for the SaveToolStripMenuItem and saveMenuStripButton click event
@@ -138,13 +119,7 @@ namespace COMP123_S2019_FinalTestC.Views
                     using (StreamWriter outputStream = new StreamWriter(
                         File.Open(CharacterSheetSaveFileDialog.FileName, FileMode.Create)))
                     {
-                        //Write stuff to the file
-                        //outputStream.WriteLine(Program.product.productID.ToString());
-                        //outputStream.WriteLine(Program.product.condition);
-                        //outputStream.WriteLine(Program.product.cost);
-                        //outputStream.WriteLine(Program.product.platform);
-                        
-
+                       
                         //Cleanup
                         outputStream.Close();
                         outputStream.Dispose();
@@ -157,6 +132,69 @@ namespace COMP123_S2019_FinalTestC.Views
                 }
                 MessageBox.Show("File saved successfully!", "Saving...",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        /// <summary>
+        /// This is the shared event handler for the helpToolStripMenuItem and saveMenuStripButton click event
+        /// This is the event handler for the helpToolStripMenuItem click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.aboutForm.ShowDialog();
+        }
+        /// <summary>
+        /// This the event handler for the GenerateNameButton click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void GenerateNameButton_Click(object sender, EventArgs e)
+        {
+            FirstNameDataLabel.Text = GenerateFirstName();
+            LastNameDataLabel.Text = GenerateLastName();
+            //CharacterNameTextBox.Text = FirstNameDataLabel.Text + " " + LastNameDataLabel.Text;
+        }
+
+        public string GenerateFirstName()
+        {
+            string[] firstNames = File.ReadAllLines("firstNames.txt");
+            string firstName = firstNames[random.Next(firstNames.Length)];
+            return firstName.ToString();
+        }
+
+        public string GenerateLastName()
+        {
+            string[] lastNames = File.ReadAllLines("lastNames.txt");
+            string lastName = lastNames[random.Next(lastNames.Length)];
+            return lastName.ToString();
+        }
+
+        private void GenerateSkillsButton_Click(object sender, EventArgs e)
+        {
+            AnimalDataLabel.Text = GenerateAnimal();
+        }
+        /// <summary>
+        /// this is the method for skills on animal
+        /// </summary>
+        /// <returns></returns>
+        public string GenerateAnimal()
+        {
+            string[] animals = File.ReadAllLines("skills.txt");
+            string animal = animals[random.Next(animals.Length)];
+            return animals.ToString();
+        }
+        /// <summary>
+        /// This is the event handler for the NextButton Click event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            if (MainTabControl.SelectedIndex < MainTabControl.TabPages.Count - 1)
+            {
+                MainTabControl.SelectedIndex++;
             }
         }
     }

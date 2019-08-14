@@ -12,13 +12,11 @@ using System.Windows.Forms;
  */
 namespace COMP123_S2019_FinalTestC
 {
-    static class Program
+     static class Program
     {
         public static SplashScreen splashScreen;
         public static CharacterGenerationForm characterForm;
-        public static AboutForm aboutForm;
-
-        internal static AboutForm AboutForm { get => aboutForm; set => aboutForm = value; }
+        public static AboutBox aboutForm;
 
         /// <summary>
         /// The main entry point for the application.
@@ -31,7 +29,7 @@ namespace COMP123_S2019_FinalTestC
 
             characterForm = new CharacterGenerationForm();
             splashScreen = new SplashScreen();
-            aboutForm = new AboutForm();
+            aboutForm = new AboutBox();
 
             Application.Run(splashScreen);
         }
