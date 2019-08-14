@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 /*
  * Student Name:
  * Student ID:
- * Description: This the  CharecterPortfolio Class to be used with the charecter
+ * Description:  This is the main container class for the application
  * 
  */
 
@@ -31,7 +31,7 @@ namespace COMP123_S2019_FinalTestC.Objects
         //constructer
         CharecterPortfolio()
         {
-            Skills = new List<Skill>();
+            this.Skills = new List<Skill>();
             this.Identity = new Identity();
         }
     }

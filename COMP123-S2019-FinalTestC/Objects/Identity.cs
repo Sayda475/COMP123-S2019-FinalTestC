@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 /*
- * Student Name:
- * Student ID:
- * Description: This the Identity Class to be used with the charecter
- * 
+ * Student Name: Sayda Rahman
+ * Student ID: 301042327
+ * Description: This is the Identity Class to be used with CharacterPortfolio Class
  */
 namespace COMP123_S2019_FinalTestC.Objects
 {
